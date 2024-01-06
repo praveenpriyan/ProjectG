@@ -1,0 +1,135 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 50px;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#login-form {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #228cdc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+#signup-form {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #228cdc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#login-form label {
+  color: black; /* Set text color to white for labels */
+}
+
+p{
+  color: black;
+}
+
+a{
+  color: blue;
+}
+
+#check{
+  width: 10%;
+  margin-right: 100%;
+}
+
+#checker{
+  width: 50%;
+  margin-left: 5%;
+  margin-top: -9%;
+}
+
+/*Sign Up page starts*/
+#Email {
+  width: 25%;
+  border-radius: 10px;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 3vh;
+  padding-left: 10px;
+}
+#Password {
+  width: 25%;
+  border-radius: 10px;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 3vh;
+  padding-left: 10px;
+}
+#user {
+  width: 25%;
+  border-radius: 10px;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 3vh;
+  padding-left: 10px;
+}
+#num {
+  width: 25%;
+  border-radius: 10px;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 3vh;
+  padding-left: 10px;
+}
+#con-pwd {
+  width: 25%;
+  border-radius: 10px;
+  height: 7vh;
+  margin-top: 5px;
+  margin-bottom: 3vh;
+  padding-left: 10px;
+}
+
+
+#confirm {
+  background-color: #085fd1;
+  width: 25%;
+  height: 7vh;
+  font-size: 14px;
+  color: white;
+  border-radius: 6px;
+  border-color: #085fd1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
