@@ -5,66 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Terms and Conditions Page</title>
+
+      <link href="css/termsandcondition.css" rel="stylesheet">
 </head>
+
 <body>
+<div class="container">
+  <h1>Terms and Conditions</h1>
+  <h2>Terms of Service Agreement for Online Game</h2>
+  <ol>
+    <li><strong>Introduction</strong></li>
+    <ul><li>This Terms of Service Agreement ("Agreement") governs your use of the online game provided by [Your Company/Game Name] ("we" or "us").</li></ul>
+    <li><strong>Acceptance of terms</strong></li>
+    <ul><li>By accessing or using our online game, you agree to be bound by the terms and conditions set forth in this Agreement.</li></ul>
+    <li><strong>User Eligibility</strong></li>
+    <ul><li>You must be at least 18 years old to play our online game. By using the game, you affirm that you are 18 years or older. </li></ul>
+    <li><strong>Code of Conduct</strong></li>
+    <ul><li>Users are expected to adhere to a standard of behavior that promotes a positive and enjoyable gaming experience.
+      Prohibited activities include, but are not limited to, cheating, harassment, and any form of abuse towards other users.</li></ul>
+    <li><strong>Payment Terms (if applicable)</strong></li>
+    <ul><li>If the game includes paid features, you agree to pay any fees associated with those features.</li></ul>
+    <li><strong>Intellectual Property</strong></li>
+    <ul><li>All content, including but not limited to graphics, text, and software, is the property of [Your Company]. Users may not reproduce, distribute, or create derivative works without permission.</li></ul>
+    <li><strong>Liability Disclaimer</strong></li>
+    <ul><li>We are not responsible for any loss, damage, or injury resulting from the use of our online game.
+      We disclaim any warranties, whether express or implied.</li></ul>
+    <li><strong>User Data</strong></li>
+    <ul><li>We may collect and use user data in accordance with our Privacy Policy.</li></ul>
+    <li><strong>Termination</strong></li>
+    <ul><li>We reserve the right to terminate or suspend your account for violations of this Agreement.</li></ul>
+    <li><strong>Modifications to the Agreement</strong></li>
+    <ul><li>We may update or modify this Agreement from time to time. Continued use of the game after such changes constitutes acceptance of the modified terms.</li></ul>
+    <li><strong>Governing Law</strong></li>
+    <ul><li>This Agreement is governed by the laws of [Your Jurisdiction].</li></ul>
+    <li><strong>Contact Information</strong></li>
+    <ul><li>For questions or concerns regarding this Agreement, please contact us at [Your Contact Information].</li></ul>
+    </ol>
+    <strong>Please read and agree the terms and conditions</strong>
+    <br>
+  <div id="dialog" class="hidden">
+      <p><strong>By clicking "I agree" or accessing our online game, you acknowledge that you have read and understood the terms and conditions of this Agreement.</strong></p>
+      <input type="checkbox" id="agreeCheckbox"> <label for="agreeCheckbox">I agree to the terms and conditions</label>
 
-<form>
-<div id="login-container">
-  <h2>Terms and Conditions</h2>
-    <p>A Terms & Conditions agreement dictates the rules, restrictions, obligations, and responsibilities while playing your game.</p>
-
-    <p>A Terms & Conditions agreement can include:</p>
-    
-    <p> Standards of behavior if your game allows for users to interact with other users
-        Payment terms if you charge for the game
-        Liability disclaimers that may arise from playing your game.</p>
-    
-    <p>A user must be 18+ or above</p>
+      <button onclick="closeDialog()">I Agree</button>
+  </div>
+  <br>
+  <button onclick="openDialog()">I agree to the terms and conditions</button>
 </div>
-</form>
 
-<!-- Terms and Conditions Dialog Box -->
-<div id="terms-dialog" style="display: none;">
-  <h3>Terms and Conditions</h3>
-  <p>This is a sample terms and conditions text. Please read carefully before proceeding.</p>
-  <button onclick="hideTermsDialog()">Close</button>
-</div>
-
-<script>
-  function validateForm() {
-    const termsCheckbox = document.getElementById('terms-checkbox');
-    const mandatoryCheckbox = document.getElementById('mandatory-checkbox');
-
-    if (!termsCheckbox.checked || !mandatoryCheckbox.checked) {
-      alert('You must agree to both the terms and conditions and the mandatory checkbox to login.');
-      return false; // Prevent form submission
-    }
-
-    // Additional validation logic can be added here
-
-    return true; // Allow form submission
-  }
-
-  function showTermsDialog() {
-    document.getElementById('terms-dialog').style.display = 'block';
-  }
-
-  function hideTermsDialog() {
-    document.getElementById('terms-dialog').style.display = 'none';
-  }
-
-  // Enable the login button when both checkboxes are checked
-  document.getElementById('terms-checkbox').addEventListener('change', updateLoginButtonState);
-  document.getElementById('mandatory-checkbox').addEventListener('change', updateLoginButtonState);
-
-  function updateLoginButtonState() {
-    const termsCheckbox = document.getElementById('terms-checkbox');
-    const mandatoryCheckbox = document.getElementById('mandatory-checkbox');
-    const loginButton = document.getElementById('login-button');
-
-    loginButton.disabled = !(termsCheckbox.checked && mandatoryCheckbox.checked);
-  }
-</script>
-
+<script src="js/terms-and-conditions.js" type="text/javascript"></script>
 </body>
 </html>

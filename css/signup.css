@@ -1,9 +1,9 @@
 /*Sign Up page starts*/
 body {
     font-family: 'Arial', sans-serif;
-    text-align: center;
+    text-align: left;
     margin: 0;
-    padding: 50px;
+    padding: 20px;
   }
 
   .signup-image {
@@ -22,7 +22,7 @@ body {
   }
 
 #Email {
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
     height: 7vh;
     margin-top: 5px;
@@ -30,7 +30,7 @@ body {
     padding-left: 10px;
   }
   #Password {
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
     height: 7vh;
     margin-top: 5px;
@@ -38,7 +38,7 @@ body {
     padding-left: 10px;
   }
   #user {
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
     height: 7vh;
     margin-top: 5px;
@@ -46,7 +46,7 @@ body {
     padding-left: 10px;
   }
   #num {
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
     height: 7vh;
     margin-top: 5px;
@@ -54,7 +54,7 @@ body {
     padding-left: 10px;
   }
   #con-pwd {
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
     height: 7vh;
     margin-top: 5px;
@@ -83,3 +83,26 @@ body {
   a:hover{
     color: red;
   }
+
+.signup_form{
+  max-width: 40%;
+  margin: 0 auto;
+  background-color: lightblue;
+  padding-top: 1%;
+  padding-bottom: 15%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; 
+}
+
+
+@media screen and (max-width: 600px) {
+  .signup_form {
+      max-width: 100%;
+      margin: 20px;
+  }
+
+  #dialog {
+      width: 90%;
+  }
+}

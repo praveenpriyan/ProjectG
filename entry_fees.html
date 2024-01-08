@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Entry Fees</title>
+
+    <link rel="stylesheet" href="css/entry_fees.css">
+</head>
+
+<body>
+
+    <h1>Welcome to the Gaming Platform</h1>
+    <p>Choose the entry fee for the game:</p>
+
+    <div class="entry-fees-container">
+        <div class="entry-fee" onclick="redirectToGame(5)">
+            <h2><button class="circular-button">₹5 Game</button></h2>
+        </div>
+        <div class="entry-fee" onclick="redirectToGame(10)">
+            <h2><button class="circular-button">₹10 Game</button></h2>
+        </div>
+        <div class="entry-fee" onclick="redirectToGame(20)">
+            <h2><button class="circular-button">₹20 Game</button></h2>
+        </div>
+        <div class="entry-fee" onclick="redirectToGame(50)">
+            <h2><button class="circular-button">₹50 Game</button></h2>
+        </div>
+        <div class="entry-fee" onclick="redirectToGame(0)">
+            <h2><button class="circular-button">Free Game</button></h2>
+        </div>
+
+    </div>
+
+    <script>
+        function redirectToGame(entryFee) {
+            window.location.href = 'tic_tac_toe.html?entryFee=' + entryFee;
+        }
+    </script>
+
+</body>
+
+</html>
+

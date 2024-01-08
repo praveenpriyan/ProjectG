@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Wallet</title>
+</head>
+
+<body>
+
+  <h1>User Wallet</h1>
+
+  <div id="wallet-info">
+    <p id="wallet-balance">Wallet Balance: ₹<span id="balance-amount"></span></p>
+    <p id="bonus-amount">Bonus Amount: ₹<span id="bonus"></span></p>
+  </div>
+
+  <div id="wallet-actions">
+    <button onclick="rechargeWallet()">Recharge</button>
+    <button onclick="withdrawAmount()">Withdraw</button>
+    <button onclick="claimBonus()">Claim Bonus</button>
+  </div>
+
+  <script>
+    async function updateWalletInfo() {
+      const response = await fetch('http://localhost:3000/api/wallet');
+      const data = await response.json();
+
+      document.getElementById('balance-amount').innerText = data.walletBalance;
+      document.getElementById('bonus').innerText = data.bonusAmount;
+    }
+
+    async function rechargeWallet() {
+      const amount = prompt('Enter recharge amount:');
+      if (amount !== null) {
+        const response = await fetch('http://localhost:3000/api/recharge', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount: parseFloat(amount) }),
+        });
+        const data = await response.json();
+        alert(data.message);
+        updateWalletInfo();
+      }
+    }
+
+    async function withdrawAmount() {
+      const amount = prompt('Enter withdrawal amount:');
+      if (amount !== null) {
+        const response = await fetch('http://localhost:3000/api/withdraw', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount: parseFloat(amount) }),
+        });
+        const data = await response.json();
+        alert(data.message);
+        updateWalletInfo();
+      }
+    }
+
+    async function claimBonus() {
+      const response = await fetch('http://localhost:3000/api/claim-bonus', {
+        method: 'POST',
+      });
+      const data = await response.json();
+      alert(data.message);
+      updateWalletInfo();
+    }
+
+    updateWalletInfo();
+  </script>
+
+</body>
+
+</html>
+

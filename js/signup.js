@@ -4,7 +4,7 @@ function validate() {
     var username = document.getElementById("user").value;
     var number = document.getElementById("num").value;
     var conpwd = document.getElementById("con-pwd").value;
-    var checkbox = document.getElementById("check").value;
+    //var checkbox = document.getElementById("check").value;
     console.log(email);
   
     if (username.length === 0) {
@@ -27,9 +27,11 @@ function validate() {
       alert("password should contain atleast one special character!...");
     } else if (conpwd !== password) {
       alert("password doesn't matched!");
-    } else if (checkbox === "off") {
-      alert("Please checkout the checkbox..!");
-    } else {
+    }
+    // } else if (checkbox === "off") {
+    //   alert("Please checkout the checkbox..!");
+    // } 
+    else {
       alert("Signup successfully");
       window.location.href = "terms_and_conditions.html";
       var UserData = {

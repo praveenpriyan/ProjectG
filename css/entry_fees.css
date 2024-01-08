@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: lightseagreen;
+}
+
+.circular-button {
+display: inline-block;
+padding: 15px 30px;
+font-size: 16px;
+text-decoration: none;
+background-color: white;
+color: black;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.circular-button:hover{
+    background-color: palevioletred;
+}
+
+@media screen and (max-width: 600px) {
+    .entry-fees-container {
+        max-width: 100%;
+        margin: 20px;
+    }
+  
+    #dialog {
+        width: 90%;
+    }
+  }

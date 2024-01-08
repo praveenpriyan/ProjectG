@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/board-style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board"></div>
+  <div id="message"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const board = document.getElementById('board');
+      const message = document.getElementById('message');
+      let currentPlayer = 'X';
+      let gameBoard = ['', '', '', '', '', '', '', '', ''];
+      let gameActive = true;
+
+      // Replace 'your-websocket-server' with your actual WebSocket server address
+      const socket = new WebSocket('ws://your-websocket-server');
+
+      socket.addEventListener('open', (event) => {
+        console.log('WebSocket connection opened:', event);
+      });
+
+      socket.addEventListener('message', (event) => {
+        const data = JSON.parse(event.data);
+        handleSocketMessage(data);
+      });
+
+      function sendMove(index) {
+        const data = {
+          type: 'move',
+          index: index,
+          player: currentPlayer,
+        };
+        socket.send(JSON.stringify(data));
+      }
+
+      function handleSocketMessage(data) {
+        if (data.type === 'move') {
+          const index = data.index;
+          if (gameBoard[index] === '' && gameActive) {
+            gameBoard[index] = data.player;
+            renderBoard();
+
+            const winner = checkWinner();
+            if (winner) {
+              gameActive = false;
+              if (winner === 'T') {
+                message.textContent = "It's a tie!";
+              } else {
+                message.textContent = `${winner} wins!`;
+              }
+            } else {
+              currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+              message.textContent = `Player ${currentPlayer}'s turn`;
+            }
+          }
+        }
+      }
+
+      function renderBoard() {
+        board.innerHTML = '';
+        for (let i = 0; i < 9; i++) {
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          cell.dataset.index = i;
+          cell.textContent = gameBoard[i];
+          cell.addEventListener('click', () => handleCellClick(i));
+          board.appendChild(cell);
+        }
+      }
+
+      function handleCellClick(index) {
+        sendMove(index);
+      }
+
+      renderBoard();
+    });
+  </script>
+</body>
+
+</html>

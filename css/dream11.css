@@ -34,3 +34,14 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        margin: 20px;
+    }
+  
+    #dialog {
+        width: 90%;
+    }
+  }
