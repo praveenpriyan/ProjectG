@@ -29,8 +29,8 @@
       <input type="password" id="password" placeholder="Enter your password">
       <i class="fas fa-eye" onclick="togglePasswordVisibility()"></i>
       <br>
-      <input type="checkbox" id="check" onclick="validateCheckbox()" />
-      <p id="checker">I am 18+ above</p>
+      <input type="checkbox" id="check">
+      <p id="checker">Remember Me</p>
   
       <input id="confirm" type="submit" value="Login" onclick="validate()"><br /><br />
       <a class="pass" href=" ">Forgot Password?</a><br /><br />
@@ -38,16 +38,6 @@
         <a class="sign" href="signup.html">Signup</a></br>
       </div>
     </div>
-      
-    <script>
-      function validateCheckbox() {
-        const checkbox = document.getElementById('check');
-    
-        if (!checkbox.checked) {
-          alert('You must agree to the terms first.');
-        }
-      }
-    </script>
 
     <script src="js/validate.js" type="text/javascript"></script>
   </body>

@@ -22,11 +22,12 @@ function validate() {
     //     // saveData.length &&
     //     JSON.parse(localStorage.getItem("UserData"));
     //   console.log(exist);
+    
       if (username === "user" && password === "pass") {
         alert("Logged in Successfully!");
         window.location.href = "homepage.html";
       } else {
-        alert("Wrong Username or please do signup...");
+        alert("Wrong Username or please do signup..");
       }
     }
   }

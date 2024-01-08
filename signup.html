@@ -5,34 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Game World</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signup.css" />
 
   </head>
   <body>
-        <form class="signup-form" name="form" onsubmit=" event.preventDefault();validate()">
+        <div class="signup-image">
+          <img src="Images/wp4390828.jpg" alt="signup-image">
+        </div>
+        <form class="login_form" name="form" onsubmit=" event.preventDefault();validate()">
           <div class="container">
             <b><p id="para">SignUp</p></b>
             <br /><br />
             Username<br />
-            <input type="text" id="user" placeholder="Enter Username" required/><br />
+            <input type="text" id="user" placeholder="Username" required/><br />
             Mobile Number<br />
             <input type="text" id="num" placeholder="Enter Mobile Number" required/><br />
             Email<br />
             <input type="text" id="Email" placeholder="name@example.com" required/><br />
             Password</br>
-            <input type="password" id="Password" placeholder="Min.8 characters"required />
+            <input type="password" id="Password" placeholder="min.8 characters"required />
             <br />
             Confirm-Password<br />
             <input type="password" id="con-pwd" placeholder="Re-enter password" required/><br />
             <br />
-            <input type="checkbox" for="logCheck" id="check"onclick="if(!checkbox.checked){alert('You must agree to the terms first.');return false}" /> Remember me <br /><br />
             <button id="confirm" type="submit" >Submit</button><br /><br />
             <div class="footer">Do you have an account?
               <a class="sign" href="index.html">Login</a></br>
             </div>
           </div>
         </form>
-      </div>
+
     <script src="js/signup.js" type="text/javascript"></script>
+  </body>
   </body>
 </html>

@@ -31,7 +31,7 @@ function validate() {
       alert("Please checkout the checkbox..!");
     } else {
       alert("Signup successfully");
-      window.location.href = "index.html";
+      window.location.href = "terms_and_conditions.html";
       var UserData = {
         email,
         username,

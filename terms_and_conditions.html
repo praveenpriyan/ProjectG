@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Terms and Conditions Page</title>
+</head>
+<body>
+
+<form>
+<div id="login-container">
+  <h2>Terms and Conditions</h2>
+    <p>A Terms & Conditions agreement dictates the rules, restrictions, obligations, and responsibilities while playing your game.</p>
+
+    <p>A Terms & Conditions agreement can include:</p>
+    
+    <p> Standards of behavior if your game allows for users to interact with other users
+        Payment terms if you charge for the game
+        Liability disclaimers that may arise from playing your game.</p>
+    
+    <p>A user must be 18+ or above</p>
+</div>
+</form>
+
+<!-- Terms and Conditions Dialog Box -->
+<div id="terms-dialog" style="display: none;">
+  <h3>Terms and Conditions</h3>
+  <p>This is a sample terms and conditions text. Please read carefully before proceeding.</p>
+  <button onclick="hideTermsDialog()">Close</button>
+</div>
+
+<script>
+  function validateForm() {
+    const termsCheckbox = document.getElementById('terms-checkbox');
+    const mandatoryCheckbox = document.getElementById('mandatory-checkbox');
+
+    if (!termsCheckbox.checked || !mandatoryCheckbox.checked) {
+      alert('You must agree to both the terms and conditions and the mandatory checkbox to login.');
+      return false; // Prevent form submission
+    }
+
+    // Additional validation logic can be added here
+
+    return true; // Allow form submission
+  }
+
+  function showTermsDialog() {
+    document.getElementById('terms-dialog').style.display = 'block';
+  }
+
+  function hideTermsDialog() {
+    document.getElementById('terms-dialog').style.display = 'none';
+  }
+
+  // Enable the login button when both checkboxes are checked
+  document.getElementById('terms-checkbox').addEventListener('change', updateLoginButtonState);
+  document.getElementById('mandatory-checkbox').addEventListener('change', updateLoginButtonState);
+
+  function updateLoginButtonState() {
+    const termsCheckbox = document.getElementById('terms-checkbox');
+    const mandatoryCheckbox = document.getElementById('mandatory-checkbox');
+    const loginButton = document.getElementById('login-button');
+
+    loginButton.disabled = !(termsCheckbox.checked && mandatoryCheckbox.checked);
+  }
+</script>
+
+</body>
+</html>

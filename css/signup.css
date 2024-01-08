@@ -1,0 +1,85 @@
+/*Sign Up page starts*/
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+  }
+
+  .signup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .signup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+#Email {
+    width: 25%;
+    border-radius: 10px;
+    height: 7vh;
+    margin-top: 5px;
+    margin-bottom: 3vh;
+    padding-left: 10px;
+  }
+  #Password {
+    width: 25%;
+    border-radius: 10px;
+    height: 7vh;
+    margin-top: 5px;
+    margin-bottom: 3vh;
+    padding-left: 10px;
+  }
+  #user {
+    width: 25%;
+    border-radius: 10px;
+    height: 7vh;
+    margin-top: 5px;
+    margin-bottom: 3vh;
+    padding-left: 10px;
+  }
+  #num {
+    width: 25%;
+    border-radius: 10px;
+    height: 7vh;
+    margin-top: 5px;
+    margin-bottom: 3vh;
+    padding-left: 10px;
+  }
+  #con-pwd {
+    width: 25%;
+    border-radius: 10px;
+    height: 7vh;
+    margin-top: 5px;
+    margin-bottom: 3vh;
+    padding-left: 10px;
+  }
+  
+  
+  #confirm {
+    background-color: #085fd1;
+    width: 25%;
+    height: 7vh;
+    font-size: 14px;
+    color: white;
+    border-radius: 6px;
+    border-color: #085fd1;
+  }
+
+  .container {
+    width: 100%;
+    height: 70vh;
+    margin-left: 3vw;
+    margin-top: 0;
+  }
+
+  a:hover{
+    color: red;
+  }
